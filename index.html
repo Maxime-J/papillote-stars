@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Papillote background</title>
+    <style>
+      body {
+        margin: 0;
+        background-color: #1a2b4d;
+      }
+      #back {
+        height: 100vh;
+      }
+    </style>
+    <script>
+      addEventListener('load', async () => {
+        let res = await fetch('/papillote.bin');
+        res = await res.arrayBuffer();
+        window.papillote = new Float32Array(res);
+        const { zoomIn, run, stop } = await papilloteBackground();
+        setTimeout(zoomIn, 1000);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="back"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
