@@ -1,6 +1,6 @@
-import { useState, useRef, useEffect, Suspense } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Points, PointMaterial, Preload, CameraControls } from '@react-three/drei';
+import { CameraControls, PointMaterial, Points, Preload } from '@react-three/drei';
 
 function Stars() {
   const ref = useRef();
